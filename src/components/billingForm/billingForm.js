@@ -12,6 +12,13 @@ const adddressSchema = Yup.object().shape({
     .min(4, "too short")
     .max(15, "too long")
     .required("last name is required"),
+  contactNumber: Yup.array(Yup.number().min(4).required('required')).required("needed"),
+  address: Yup.object().shape({
+    houseNumber: Yup.number().required("requird feild"),
+    street: Yup.string().required("requird feild"),
+    city: Yup.string().required("requird feild"),
+    state: Yup.string().required("requird feild"),
+  }),
 });
 
 export const BillingForm = () => {
@@ -68,24 +75,27 @@ export const BillingForm = () => {
                     values.values.contactNumber.length > 0
                       ? values.values.contactNumber.map((number, index) => (
                           <div key={index}>
-                            <Field
-                              name={`contactNumber.${index}`}
-                              placeholder="Contact number"
-                            />
-                            {index > 0 && (
+                            <div>
+                              <Field
+                                name={`contactNumber.${index}`}
+                                placeholder="Contact number"
+                              />
+                              {index > 0 && (
+                                <button
+                                  type="button"
+                                  onClick={() => arrayHelpers.remove(index)}
+                                >
+                                  -
+                                </button>
+                              )}
                               <button
                                 type="button"
-                                onClick={() => arrayHelpers.remove(index)}
+                                onClick={() => arrayHelpers.insert(index, "")}
                               >
-                                -
+                                +
                               </button>
-                            )}
-                            <button
-                              type="button"
-                              onClick={() => arrayHelpers.insert(index, '')}
-                            >
-                              +
-                            </button>
+                            </div>
+                            <ErrorMessage name={`contactNumber[${index}`} />
                           </div>
                         ))
                       : null}

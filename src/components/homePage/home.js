@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Navbar } from "../NavBar/navbar";
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ export const Home = () => {
 
   return (
     <div>
+      <Navbar/>
       <h1>
         Welcome {userFirstName} {userLastName}
       </h1>
