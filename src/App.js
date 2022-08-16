@@ -7,6 +7,7 @@ import { BillingForm } from "./components/billingForm/billingForm";
 import { AuthorPage } from "./components/user/AuthorPage";
 import { CartPage } from "./components/user/cartPage";
 import { BookPage } from "./components/user/bookPage";
+import { Booklist } from "./components/user/booklist";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/billing" element={<BillingForm />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/books" element={<BookPage />} />
+          <Route path="/books" element={<Booklist />} />
+          <Route path="/booksPage" element={<BookPage />} />
           <Route path="/Author" element={<AuthorPage />} />
 
           <Route path="*" element={<ErroePage />} />
