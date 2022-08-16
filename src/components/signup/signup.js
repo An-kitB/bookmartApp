@@ -140,7 +140,7 @@ export const Signup = () => {
                       {console.log(values.values.phoneNumber)}
                       {values.values.phoneNumber &&
                       values.values.phoneNumber.length > 0
-                        ? values.values.phoneNumber.map((friend, index) => (
+                        ? values.values.phoneNumber.map((number, index) => (
                             <div key={index}>
                               <Field
                                 name={`phoneNumber.${index}`}

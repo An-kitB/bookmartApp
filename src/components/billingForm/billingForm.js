@@ -1,4 +1,4 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
 import { feildStyle } from "../login/loginStyles";
@@ -23,13 +23,12 @@ export const BillingForm = () => {
         initialValues={{
           firstName: "",
           lastName: "",
-          // contactNumber: [],
+          contactNumber: [""],
           address: {
             houseNumber: "",
             street: "",
-            // city: "",
-            // state: "",
-            // landMark: "",
+            city: "",
+            state: "",
           },
         }}
         validationSchema={adddressSchema}
@@ -38,7 +37,7 @@ export const BillingForm = () => {
           resetForm();
         }}
       >
-        {() => (
+        {(values) => (
           <Form>
             <div>
               <Field
@@ -59,6 +58,43 @@ export const BillingForm = () => {
             <ErrorMessage name="lastName" />
 
             <div>
+              <FieldArray
+                name="contactNumber"
+                render={(arrayHelpers) => (
+                  <div>
+                    {console.log(values.values.contactNumber)}
+
+                    {values.values.contactNumber &&
+                    values.values.contactNumber.length > 0
+                      ? values.values.contactNumber.map((number, index) => (
+                          <div key={index}>
+                            <Field
+                              name={`contactNumber.${index}`}
+                              placeholder="Contact number"
+                            />
+                            {index > 0 && (
+                              <button
+                                type="button"
+                                onClick={() => arrayHelpers.remove(index)}
+                              >
+                                -
+                              </button>
+                            )}
+                            <button
+                              type="button"
+                              onClick={() => arrayHelpers.insert(index, '')}
+                            >
+                              +
+                            </button>
+                          </div>
+                        ))
+                      : null}
+                  </div>
+                )}
+              />
+            </div>
+
+            <div>
               <Field
                 style={feildStyle}
                 name="address.houseNumber"
@@ -71,10 +107,27 @@ export const BillingForm = () => {
               <Field
                 style={feildStyle}
                 name="address.street"
-                placeholder="Street"
+                placeholder="street"
               />
             </div>
-            <ErrorMessage name="street" />
+            <ErrorMessage name="address.street" />
+            <div>
+              <Field
+                style={feildStyle}
+                name="address.city"
+                placeholder="city"
+              />
+            </div>
+            <ErrorMessage name="address.city" />
+
+            <div>
+              <Field
+                style={feildStyle}
+                name="address.state"
+                placeholder="State"
+              />
+            </div>
+            <ErrorMessage name="address.state" />
 
             <button type="submit">submit</button>
           </Form>

@@ -1,5 +1,6 @@
 import { Field, Formik, ErrorMessage, Form, getIn } from "formik";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { feildStyle } from "./loginStyles";
@@ -13,6 +14,7 @@ const LoginSchema = Yup.object().shape({
 
 export const Login = () => {
   const navigate = useNavigate();
+
 
   const Auth = (userEmAil, userPassWord) => {
     JSON.parse(localStorage.getItem("LoaclStorageUserEmail")) === userEmAil &&
@@ -45,7 +47,6 @@ export const Login = () => {
                 style={feildStyle}
                 name="email"
                 type="email"
-                autoComplete="on"
                 placeholder="email"
               />
             </div>
