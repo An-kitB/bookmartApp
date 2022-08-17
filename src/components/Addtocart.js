@@ -3,14 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCartAction, rmvFromCartAction } from "../redux/actions/action";
 
 export const Addtocart = () => {
-  const numberOfCopy = useSelector((state) => state);
+  const numberOfCopy = useSelector((state) => state.Quantity);
   const [copyNumber, setCopyNumber] = useState(numberOfCopy);
   const num = Number(copyNumber);
   const dispatch = useDispatch();
 
+
   useEffect(() => {
     setCopyNumber(numberOfCopy);
   }, [numberOfCopy]);
+
+
 
   const handleAdd = () => {
     dispatch(addToCartAction());
@@ -22,10 +25,13 @@ export const Addtocart = () => {
 
   return (
     <div>
-      Addtocart
-      <button onClick={handleAdd}>+</button>
-      {num}
+      <p>How many you wanna purchase </p>
       <button onClick={handleRmv}>-</button>
+      {num}
+      <button onClick={handleAdd}>+</button>
+    
     </div>
+
+
   );
 };

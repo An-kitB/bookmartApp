@@ -1,4 +1,4 @@
 import { legacy_createStore } from "redux";
-import AddtocartReducer from "./reducer/addTocarReducer";
+import Rootreducer from "./reducer/CombinedReducer";
 
-export const store = legacy_createStore(AddtocartReducer);
+export const store = legacy_createStore(Rootreducer);

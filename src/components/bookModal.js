@@ -4,10 +4,18 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { BookData } from "./bookdata";
 import { Addtocart } from "./Addtocart";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addBookToCartAction } from "../redux/actions/action";
 
-console.log("modal");
 export const BookModal = ({ setclick, BookId }) => {
-  console.log("l,jfd,v", BookId);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handleGoToCart = (data) => {
+    dispatch(addBookToCartAction(data))
+    navigate("/cart");
+  };
   const handleClose = () => {
     setclick(false);
   };
@@ -23,6 +31,16 @@ export const BookModal = ({ setclick, BookId }) => {
           </Typography>
           <img style={styles.imgStyle} src={BookData[BookId - 1].img} />
           <Addtocart />
+          <div>
+            <button
+              onClick={() => {
+                handleGoToCart(BookData[BookId - 1]);
+              }}
+            >
+              Go to cart
+            </button>
+          </div>
+
           <button onClick={handleClose}>Close</button>
         </Box>
       </Modal>
