@@ -1,11 +1,15 @@
 export const mainDivStyleNavBar = {
   height: 50,
   backgroundColor: "#32473d",
-  justifyContent: "center",
+  paddingTop: 25,
+  letterSpacing: 3,
 };
 
 export const linkStyle = {
   color: "#fff",
-  paddingRight: 20,
+  paddingRight: 40,
   paddingTop: 25,
+  textDecoration: "none",
+  color: "#fff",
+  marginLeft: 12,
 };

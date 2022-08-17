@@ -4,6 +4,11 @@ import harryPotter from "../media/booksMedia/harryPotter.jpeg";
 import HarryPotter2 from "../media/booksMedia/HarryPotter2.jpeg";
 import homeBurial from "../media/booksMedia/homeBurial.jpeg";
 import Relativity from "../media/booksMedia/Relativity.jpeg";
+
+import AlbertEinstien from "../media/authorMedia/AlbertEinstien.jpg";
+import jkRowling from '../media/authorMedia/jkRowling.jpeg'
+import RobertFrost from "../media/authorMedia/RobertFrost.jpeg";
+
 export const BookData = [
   {
     id: "1",
@@ -13,6 +18,7 @@ export const BookData = [
     price: "500",
     rating: "4.5",
     img: Birches,
+    authorImg: AlbertEinstien,
     // authorImg:
   },
   {
@@ -23,6 +29,7 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: firrNice,
+    authorImg: jkRowling,
   },
 
   {
@@ -33,6 +40,7 @@ export const BookData = [
     price: "1500",
     rating: "4.2",
     img: harryPotter,
+    authorImg: RobertFrost,
   },
 
   {
@@ -43,6 +51,7 @@ export const BookData = [
     price: "1500",
     rating: "4.2",
     img: Birches,
+    authorImg: AlbertEinstien,
   },
   {
     id: "5",
@@ -52,6 +61,7 @@ export const BookData = [
     price: "1500",
     rating: "4.2",
     img: HarryPotter2,
+    authorImg: jkRowling,
   },
   {
     id: "6",
@@ -61,6 +71,7 @@ export const BookData = [
     price: "1500",
     rating: "4.2",
     img: firrNice,
+    authorImg: RobertFrost,
   },
 
   {
@@ -71,6 +82,7 @@ export const BookData = [
     price: "500",
     rating: "4.5",
     img: homeBurial,
+    authorImg: jkRowling,
   },
   {
     id: "8",
@@ -80,6 +92,7 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: Relativity,
+    authorImg: AlbertEinstien,
   },
 
   {
@@ -90,6 +103,7 @@ export const BookData = [
     price: "1500",
     rating: "4.2",
     img: homeBurial,
+    authorImg: jkRowling,
   },
 
   {
@@ -100,6 +114,7 @@ export const BookData = [
     price: "1500",
     rating: "4.2",
     img: Birches,
+    authorImg: RobertFrost,
   },
   {
     id: "11",
@@ -109,6 +124,7 @@ export const BookData = [
     price: "1500",
     rating: "4.2",
     img: firrNice,
+    authorImg: AlbertEinstien,
   },
   {
     id: "12",
@@ -118,6 +134,7 @@ export const BookData = [
     price: "1500",
     rating: "4.2",
     img: Relativity,
+    authorImg: jkRowling,
   },
 
   {
@@ -128,6 +145,7 @@ export const BookData = [
     price: "500",
     rating: "4.5",
     img: firrNice,
+    authorImg: RobertFrost,
   },
   {
     id: "14",
@@ -137,6 +155,7 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: homeBurial,
+    authorImg: AlbertEinstien,
   },
   {
     id: "15",
@@ -146,6 +165,7 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: HarryPotter2,
+    authorImg: jkRowling,
   },
 
   {
@@ -156,6 +176,7 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: harryPotter,
+    authorImg: RobertFrost,
   },
   {
     id: "17",
@@ -165,6 +186,7 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: HarryPotter2,
+    authorImg: AlbertEinstien,
   },
   {
     id: "18",
@@ -174,6 +196,7 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: homeBurial,
+    authorImg: jkRowling,
   },
   {
     id: "19",
@@ -183,6 +206,7 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: firrNice,
+    authorImg: RobertFrost,
   },
   {
     id: "20",
@@ -192,5 +216,6 @@ export const BookData = [
     price: "700",
     rating: "3.5",
     img: homeBurial,
+    authorImg: AlbertEinstien,
   },
 ];
