@@ -62,7 +62,7 @@ const styles = {
     transform: "translate(-50%, -50%)",
     width: window.innerWidth / 2,
     height: window.innerHeight / 1.2,
-    borderRadius: 22,
+    // borderRadius: 22,
     bgcolor: "background.paper",
     border: "2px solid #000",
     boxShadow: 24,

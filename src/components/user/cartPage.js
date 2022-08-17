@@ -1,5 +1,5 @@
 import React from "react";
-import { CartComp } from "../CartComp";
+import { CartComp } from "../cart/CartComp";
 import { Navbar } from "../NavBar/navbar";
 
 export const CartPage = () => {

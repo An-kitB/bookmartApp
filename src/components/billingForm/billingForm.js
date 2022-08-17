@@ -1,6 +1,8 @@
 import { ErrorMessage, Field, FieldArray, Form, Formik } from "formik";
 import React from "react";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
+import { addAddressAction } from "../../redux/actions/action";
 import { feildStyle } from "../login/loginStyles";
 
 const adddressSchema = Yup.object().shape({
@@ -12,7 +14,9 @@ const adddressSchema = Yup.object().shape({
     .min(4, "too short")
     .max(15, "too long")
     .required("last name is required"),
-  contactNumber: Yup.array(Yup.number().min(4).required('required')).required("needed"),
+  contactNumber: Yup.array(Yup.number().min(4).required("required")).required(
+    "needed"
+  ),
   address: Yup.object().shape({
     houseNumber: Yup.number().required("requird feild"),
     street: Yup.string().required("requird feild"),
@@ -22,6 +26,9 @@ const adddressSchema = Yup.object().shape({
 });
 
 export const BillingForm = () => {
+  
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h1>Billing Form</h1>
@@ -40,7 +47,9 @@ export const BillingForm = () => {
         }}
         validationSchema={adddressSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log("values", values);
+          // console.log("values", values);
+          dispatch(addAddressAction(values.address, values.firstName));
+
           resetForm();
         }}
       >

@@ -8,6 +8,7 @@ import { AuthorPage } from "./components/user/AuthorPage";
 import { CartPage } from "./components/user/cartPage";
 import { BookPage } from "./components/user/bookPage";
 import { Details } from "./components/user/Details";
+import { CheckOutPAge } from "./components/CheckOutPAge";
 // import { Booklist } from "./components/user/booklist";
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
           <Route path="/books/:id" element={<Details />} />
           <Route path="/books" element={<BookPage />} />
           <Route path="/Author" element={<AuthorPage />} />
-
+          <Route path="/Checkout" element={<CheckOutPAge />} />
           <Route path="*" element={<ErroePage />} />
         </Routes>
       </Router>

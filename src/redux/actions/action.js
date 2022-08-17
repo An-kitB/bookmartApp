@@ -24,3 +24,29 @@ export const addBookToCartAction = (payload) => {
     payload,
   };
 };
+
+export const addQuantityAction = (id, num) => {
+  return {
+    type: "addQuantity",
+    id,
+    num,
+  };
+};
+
+export const RmvQuantityAction = (id, num) => {
+  return {
+    type: "rmvQuantity",
+    id,
+    num,
+  };
+};
+
+export const addAddressAction = (payload, name) => {
+  console.log("action adderss", payload);
+
+  return {
+    type: "addAddress",
+    payload,
+    name,
+  };
+};
