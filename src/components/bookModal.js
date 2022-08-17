@@ -5,15 +5,21 @@ import Typography from "@mui/material/Typography";
 import { BookData } from "./bookdata";
 import { Addtocart } from "./Addtocart";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addBookToCartAction } from "../redux/actions/action";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addBookToCartAction,
+  resetQuantityction,
+} from "../redux/actions/action";
 
 export const BookModal = ({ setclick, BookId }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const QuantitySelector = useSelector((state) => state.Quantity);
   const handleGoToCart = (data) => {
-    dispatch(addBookToCartAction(data))
+    const payload = { ...data, Quantity: QuantitySelector };
+    dispatch(addBookToCartAction(payload));
+    dispatch(resetQuantityction());
+
     navigate("/cart");
   };
   const handleClose = () => {

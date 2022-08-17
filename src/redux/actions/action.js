@@ -1,4 +1,3 @@
-
 //Add quantity chng name later
 export const addToCartAction = () => {
   return {
@@ -12,10 +11,16 @@ export const rmvFromCartAction = () => {
   };
 };
 
-export const addBookToCartAction = payload =>{
-  console.log('action ', payload)
-  return{
-    type:'add',
-    payload
-  }
-}
+export const resetQuantityction = () => {
+  return {
+    type: "Reset",
+  };
+};
+
+export const addBookToCartAction = (payload) => {
+  console.log("action ", payload);
+  return {
+    type: "add",
+    payload,
+  };
+};

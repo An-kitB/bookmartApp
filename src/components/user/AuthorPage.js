@@ -3,8 +3,7 @@ import { Navbar } from "../NavBar/navbar";
 
 export const AuthorPage = () => {
   return (
-    <div>
-      <p>
+    <>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
@@ -23,7 +22,6 @@ export const AuthorPage = () => {
         in their infancy. Various versions have evolved over the years,
         sometimes by accident, sometimes on purpose (injected humour and the
         like).
-      </p>
-    </div>
+    </>
   );
 };

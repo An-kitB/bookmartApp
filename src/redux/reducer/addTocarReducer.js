@@ -21,6 +21,9 @@ const AddtocartReducer = (state = initialState, action) => {
       return (state += 1);
     case "rmvFromCart":
       return (state -= 1);
+    case "Reset":
+      return (state = 1);
+
     default:
       return state;
   }
