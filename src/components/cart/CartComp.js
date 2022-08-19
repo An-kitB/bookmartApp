@@ -11,30 +11,11 @@ import { CardDataRender } from "./CardDataRender";
 export const CartComp = () => {
   const CartDataSelector = useSelector((state) => state.Cart);
 
-  const [totalSum, setTotalSum] = useState(0);
-  const [num, setNum] = useState(0);
-  const numberToBeUsed = Number(num);
-  console.log("comp", CartDataSelector);
+  const totalSumSelector = useSelector((state) => state.TotalSum);
+
   useEffect(() => {
-    const total = [];
-    const dataTotal = CartDataSelector.map((book) => {
-      const value = book.price * book.Quantity;
-      total.push(value);
-      const sum = total.reduce((partialSum, a) => partialSum + a, 0);
-      setTotalSum(sum);
-    });
-  }, [num]);
-
-  const dispatch = useDispatch();
-  const handleAdd = (id) => {
-    setNum((prv) => (prv += 1));
-    dispatch(addQuantityAction(id, numberToBeUsed));
-  };
-
-  const handleSub = (id) => {
-    setNum((prv) => (prv -= 1));
-    dispatch(RmvQuantityAction(id, numberToBeUsed));
-  };
+    console.log("bfcuwegu", totalSumSelector);
+  }, [totalSumSelector]);
 
   return (
     <div style={{ marginLeft: 90 }}>
@@ -47,33 +28,18 @@ export const CartComp = () => {
                 <div>
                   <div>
                     <CardDataRender {...book} />
-                    <button
-                      onClick={() => {
-                        handleAdd(book.id);
-                      }}
-                    >
-                      +
-                    </button>
-                    <button
-                      onClick={() => {
-                        handleSub(book.id);
-                      }}
-                    >
-                      -
-                    </button>
                   </div>
                 </div>
               ))}
-              <div>subTotal :{totalSum}</div>
             </div>
 
             <div style={{ marginLeft: window.innerWidth / 3 }}>
               <BillingForm />
             </div>
           </div>
-          <div style={{marginTop:40}}>
-          <Checkout />
-        </div>
+          <div style={{ marginTop: 40 }}>
+            <Checkout />
+          </div>
         </div>
       ) : (
         <h1>Nothing to show</h1>

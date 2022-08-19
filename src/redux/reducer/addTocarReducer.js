@@ -24,6 +24,7 @@ const AddtocartReducer = (state = initialState, action) => {
     case "Reset":
       return (state = 1);
 
+      
     default:
       return state;
   }

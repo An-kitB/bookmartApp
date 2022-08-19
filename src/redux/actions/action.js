@@ -50,3 +50,12 @@ export const addAddressAction = (payload, name) => {
     name,
   };
 };
+
+export const addTotalAction = (totalSum) => {
+  console.log("action adderssSumsdjcbewbc ", totalSum);
+
+  return {
+    type: "addTotal",
+    totalSum,
+  };
+};
