@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.31628c05.js",
+    "static/js/787.b4d4a380.chunk.js": "/static/js/787.b4d4a380.chunk.js",
+    "static/media/AlbertEinstien.jpg": "/static/media/AlbertEinstien.3f7e5214f7cfd8cdc7ac.jpg",
+    "static/media/HarryPotter2.jpeg": "/static/media/HarryPotter2.cb06dface5864e832234.jpeg",
+    "static/media/harryPotter.jpeg": "/static/media/harryPotter.4055e4088013e60db1bf.jpeg",
+    "static/media/firrNice.jpeg": "/static/media/firrNice.77eadba363e5215fd4af.jpeg",
+    "static/media/Relativity.jpeg": "/static/media/Relativity.a7f36c40d60c4faee8f2.jpeg",
+    "index.html": "/index.html",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.31628c05.js.map": "/static/js/main.31628c05.js.map",
+    "787.b4d4a380.chunk.js.map": "/static/js/787.b4d4a380.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.31628c05.js"
+  ]
+}
