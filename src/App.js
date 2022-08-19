@@ -9,21 +9,33 @@ import { CartPage } from "./components/user/cartPage";
 import { BookPage } from "./components/user/bookPage";
 import { Details } from "./components/user/Details";
 import { CheckOutPAge } from "./components/CheckOutPAge";
+import { useSelector } from "react-redux";
 // import { Booklist } from "./components/user/booklist";
 
 function App() {
+  const auth = useSelector((state) => state.Auth);
+  console.log("bcjkewgh", auth);
   return (
     <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/home" element={auth ? <Home /> : <ErroePage />} />
           <Route path="/billing" element={<BillingForm />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/books/:id" element={<Details />} />
-          <Route path="/books" element={<BookPage />} />
-          <Route path="/Author" element={<AuthorPage />} />
-          <Route path="/Checkout" element={<CheckOutPAge />} />
+          <Route path="/cart" element={auth ? <CartPage /> : <ErroePage />} />
+          <Route
+            path="/books/:id"
+            element={auth ? <Details /> : <ErroePage />}
+          />
+          <Route path="/books" element={auth ? <BookPage /> : <ErroePage />} />
+          <Route
+            path="/Author"
+            element={auth ? <AuthorPage /> : <ErroePage />}
+          />
+          <Route
+            path="/Checkout"
+            element={auth ? <CheckOutPAge /> : <ErroePage />}
+          />
           <Route path="*" element={<ErroePage />} />
         </Routes>
       </Router>

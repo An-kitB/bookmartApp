@@ -12,6 +12,7 @@ export const Checkout = () => {
 
   console.log(isCheckingOut);
   const handleCheckout = () => {
+
     AddressSelector.length > 0 ? navigate("/Checkout") : alert("need address");
   };
   return (
@@ -21,3 +22,7 @@ export const Checkout = () => {
     </div>
   );
 };
+
+
+
+

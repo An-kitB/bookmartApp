@@ -59,3 +59,14 @@ export const addTotalAction = (totalSum) => {
     totalSum,
   };
 };
+
+export const loginAction = () => {
+  return {
+    type: "login",
+  };
+};
+export const logoutAction = () => {
+  return {
+    type: "logout",
+  };
+};

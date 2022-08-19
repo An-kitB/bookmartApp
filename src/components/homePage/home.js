@@ -1,9 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { loginAction } from "../../redux/actions/action";
 import { Navbar } from "../NavBar/navbar";
 
 export const Home = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   const userFirstName = JSON.parse(
     localStorage.getItem("LoaclStorageFirstName")
   );
@@ -24,6 +27,8 @@ export const Home = () => {
   }
 
   const handleLogout = () => {
+    dispatch(loginAction())
+    
     navigate("/");
   };
 
