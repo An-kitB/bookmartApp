@@ -38,7 +38,6 @@ export const AddSubQuantity = ({ id }) => {
     });
   }, [num]);
 
-  //   console.log("jkshvsbvkbwe", CartDataSelector[id]);
   return (
     <div style={AddSubQuantityStyles.main}>
       <button

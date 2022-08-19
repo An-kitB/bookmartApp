@@ -1,12 +1,16 @@
 export const cartStyles = {
   main: {
     display: "flex",
-    // borderWidth: 33,
-    // borderColor: "black",
+    color: "Black",
+    borderBottonWidth: 23,
+    borderColor: "red",
+    padding: (12, 25),
+    border: (1, "solid"),
+    boxShadow: (5, 10),
   },
   imgConatainer: {
-    width: 350,
-    height: 300,
+    width: 300,
+    height: 250,
   },
   txtConatainer: {
     width: 500,
@@ -43,7 +47,7 @@ export const AddSubQuantityStyles = {
   },
   btn: {
     width: 50,
-    marginLeft:33,
+    marginLeft: 33,
     borderRadius: 13,
   },
 };

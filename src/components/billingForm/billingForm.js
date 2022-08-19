@@ -177,8 +177,14 @@ export const BillingForm = () => {
                 <div style={biilingFormStyles.errorMsg}>{msg}</div>
               )}
             />
-
-            <button type="submit">submit</button>
+            <div>
+              <button
+                style={{ alignContent: "center", width: 330, height: 40 }}
+                type="submit"
+              >
+                submit
+              </button>
+            </div>
           </Form>
         )}
       </Formik>

@@ -20,17 +20,25 @@ export const CartComp = () => {
       {CartDataSelector.length > 0 ? (
         <div>
           <div style={{ display: "flex" }}>
-            <div>
+            <div
+              style={{
+                padding: (15, 15),
+              }}
+            >
               {CartDataSelector.map((book) => (
                 <div>
-                  <div>
+                  <div
+                    style={{
+                      padding: (15, 15),
+                    }}
+                  >
                     <CardDataRender {...book} />
                   </div>
                 </div>
               ))}
             </div>
 
-            <div style={{ marginLeft: window.innerWidth / 4  }}>
+            <div style={{ marginLeft: window.innerWidth / 6}}>
               <BillingForm />
             </div>
           </div>
