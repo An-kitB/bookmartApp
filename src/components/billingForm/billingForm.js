@@ -33,10 +33,11 @@ export const BillingForm = () => {
       style={{
         width: 400,
         border: (10, "solid"),
-        paddingLeft: 90,
-        height: 600,
+        paddingLeft: 50,
+        height: 800,
         justifyContent: "center",
         alignContent: "center",
+        backgroundColor: "#f0f4f5",
       }}
     >
       <h1 style={biilingFormStyles.main}>Billing Form</h1>
@@ -46,6 +47,7 @@ export const BillingForm = () => {
           firstName: "",
           lastName: "",
           Pnum: "",
+          Email: "",
           Optional: "",
           Snum: "",
           contactNumber: [""],
@@ -67,10 +69,20 @@ export const BillingForm = () => {
           <Form>
             <div style={{ width: 400 }}>
               <div style={biilingFormStyles.feildStyle}>
+                {console.log("valuesnv", values.errors)}
+                <p
+                  style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }
+                >
+                  First Name*
+                </p>
                 <Field
                   style={biilingFormStyles.feildStyle}
                   name="firstName"
-                  placeholder="first name"
+                  placeholder="ex: Hazel"
                 />
                 <ErrorMessage
                   name="firstName"
@@ -80,10 +92,15 @@ export const BillingForm = () => {
                 />
               </div>
               <div style={biilingFormStyles.feildStyle}>
+                <p style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }>Last Name</p>
                 <Field
                   style={biilingFormStyles.feildStyle}
                   name="lastName"
-                  placeholder="last name"
+                  placeholder="ex: sith"
                 />
                 <ErrorMessage
                   name="lastName"
@@ -92,6 +109,25 @@ export const BillingForm = () => {
                   )}
                 />
               </div>
+            </div>
+
+            <p style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }>Email*</p>
+            <div>
+              <Field
+                style={{ width: 360, height: 30 }}
+                name="Email"
+                placeholder="Ex- example@ex.com"
+              />
+              <ErrorMessage
+                name="lastName"
+                render={(msg) => (
+                  <div style={biilingFormStyles.errorMsg}>{msg}</div>
+                )}
+              />
             </div>
             {/* <div> */}
             {/* <FieldArray
@@ -141,6 +177,11 @@ export const BillingForm = () => {
 
             {/* <div> */}
             <div style={biilingFormStyles.feildStyle}>
+              <p style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }>Primary No.*</p>
               <Field
                 style={biilingFormStyles.feildStyle}
                 name="Pnum"
@@ -154,6 +195,12 @@ export const BillingForm = () => {
               />
             </div>
             <div style={biilingFormStyles.feildStyle}>
+              <p style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }>Secondary No.</p>
+
               <Field
                 style={biilingFormStyles.feildStyle}
                 name="Snum"
@@ -169,6 +216,12 @@ export const BillingForm = () => {
 
             <div>
               <div style={biilingFormStyles.feildStyle}>
+                <p style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }>House No.*</p>
+
                 <Field
                   style={biilingFormStyles.feildStyle}
                   name="address.houseNumber"
@@ -183,6 +236,12 @@ export const BillingForm = () => {
               </div>
 
               <div style={biilingFormStyles.feildStyle}>
+                <p style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }>Street*</p>
+
                 <Field
                   style={biilingFormStyles.feildStyle}
                   name="address.street"
@@ -197,6 +256,12 @@ export const BillingForm = () => {
               </div>
             </div>
             <div style={biilingFormStyles.feildStyle}>
+              <p style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }>city*</p>
+
               <Field
                 style={biilingFormStyles.feildStyle}
                 name="address.city"
@@ -211,6 +276,12 @@ export const BillingForm = () => {
             </div>
 
             <div style={biilingFormStyles.feildStyle}>
+              <p style={
+                    Object.keys(values.errors).length > 0
+                      ? biilingFormStyles.heading
+                      : biilingFormStyles.heading2
+                  }>State*</p>
+
               <Field
                 style={biilingFormStyles.feildStyle}
                 name="address.state"
@@ -223,22 +294,16 @@ export const BillingForm = () => {
                 )}
               />
             </div>
-            <div>
-              <Field
-                style={biilingFormStyles.billingFeildStyle}
-                name="Optional"
-                placeholder="OPtional Feild"
-              />
-              <ErrorMessage
-                name="address.state"
-                render={(msg) => (
-                  <div style={biilingFormStyles.errorMsg}>{msg}</div>
-                )}
-              />
-            </div>
+
             <div>
               <button
-                style={{ alignContent: "center", width: 330, height: 40 }}
+                style={{
+                  alignContent: "center",
+                  width: 365,
+                  height: 40,
+                  backgroundColor: "#ededed",
+                  marginTop: 23,
+                }}
                 type="submit"
               >
                 submit
@@ -247,6 +312,10 @@ export const BillingForm = () => {
           </Form>
         )}
       </Formik>
+
+      <p style={biilingFormStyles.footerText}>
+        All Feilds marked with * are mandatory
+      </p>
     </div>
   );
 };
