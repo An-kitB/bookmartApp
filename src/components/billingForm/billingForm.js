@@ -78,7 +78,6 @@ export const BillingForm = () => {
                 name="contactNumber"
                 render={(arrayHelpers) => (
                   <div>
-                    {console.log(values.values.contactNumber)}
 
                     {values.values.contactNumber &&
                     values.values.contactNumber.length > 0
