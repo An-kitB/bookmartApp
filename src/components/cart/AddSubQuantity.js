@@ -49,7 +49,6 @@ export const AddSubQuantity = ({ id }) => {
       >
         +
       </button>
-      <p>{[CartDataSelector[id - 1]].Quantity}</p>
       <button
         style={AddSubQuantityStyles.btn}
         onClick={() => {

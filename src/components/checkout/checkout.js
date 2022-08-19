@@ -4,20 +4,20 @@ import { useNavigate } from "react-router-dom";
 
 export const Checkout = () => {
   const AddressSelector = useSelector((state) => state.Address);
+  const totalSumSelector = useSelector((state) => state.TotalSum);
 
   const [isCheckingOut, setIsCheckingOut] = useState(false);
-  console.log("inside checkout useEffect", AddressSelector);
 
   const navigate = useNavigate();
-  console.log("jsur  a numnehbr", AddressSelector.length);
 
   console.log(isCheckingOut);
   const handleCheckout = () => {
     AddressSelector.length > 0 ? navigate("/Checkout") : alert("need address");
   };
   return (
-    <div>
+    <div style={{ width: window.innerWidth/2, display: "flex", justifyContent: "space-between" }}>
       <button onClick={handleCheckout}>Checkout</button>
+      <p> subTotal : {totalSumSelector}</p>{" "}
     </div>
   );
 };

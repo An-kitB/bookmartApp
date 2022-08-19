@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { AddSubQuantity } from "./AddSubQuantity";
 import { cartStyles } from "./cartStyles";
 
@@ -11,10 +10,6 @@ export const CardDataRender = ({
   Quantity,
   price,
 }) => {
-  const totalSumSelector = useSelector((state) => state.TotalSum);
-
-;
-
   return (
     <div style={cartStyles.main}>
       <div style={cartStyles.imgConatainer}>
@@ -30,7 +25,6 @@ export const CardDataRender = ({
           <p> Quantity:{Quantity}</p>
           <div style={cartStyles.btnStyleDiv}>
             <AddSubQuantity id={id} />
-            <div>subTotal :{totalSumSelector}</div>
           </div>
         </div>
       </div>

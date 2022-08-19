@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addQuantityAction,
-  RmvQuantityAction,
-} from "../../redux/actions/action";
 import { BillingForm } from "../billingForm/billingForm";
 import { Checkout } from "../checkout/checkout";
+import { BottomBtns } from "./BottomBtns";
 import { CardDataRender } from "./CardDataRender";
 
 export const CartComp = () => {
@@ -37,8 +34,8 @@ export const CartComp = () => {
               <BillingForm />
             </div>
           </div>
-          <div style={{ marginTop: 40 }}>
-            <Checkout />
+          <div>
+            <BottomBtns />
           </div>
         </div>
       ) : (

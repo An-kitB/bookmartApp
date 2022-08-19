@@ -43,6 +43,7 @@ export const AddSubQuantityStyles = {
   },
   btn: {
     width: 50,
+    marginLeft:33,
     borderRadius: 13,
   },
 };
