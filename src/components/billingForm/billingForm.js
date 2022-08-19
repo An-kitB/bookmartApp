@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { addAddressAction } from "../../redux/actions/action";
 import { feildStyle } from "../login/loginStyles";
+import { biilingFormStyles } from "./biilingFormStyles";
 
 const adddressSchema = Yup.object().shape({
   firstName: Yup.string()
@@ -26,12 +27,11 @@ const adddressSchema = Yup.object().shape({
 });
 
 export const BillingForm = () => {
-  
   const dispatch = useDispatch();
 
   return (
     <div>
-      <h1>Billing Form</h1>
+      <h1 style={biilingFormStyles.main}>Billing Form</h1>
 
       <Formik
         initialValues={{
@@ -47,7 +47,6 @@ export const BillingForm = () => {
         }}
         validationSchema={adddressSchema}
         onSubmit={(values, { resetForm }) => {
-          // console.log("values", values);
           dispatch(addAddressAction(values.address, values.firstName));
 
           resetForm();
@@ -57,34 +56,44 @@ export const BillingForm = () => {
           <Form>
             <div>
               <Field
-                style={feildStyle}
+                style={biilingFormStyles.billingFeildStyle}
                 name="firstName"
                 placeholder="first name"
               />
             </div>
-            <ErrorMessage name="firstName" />
+            <ErrorMessage
+              name="firstName"
+              render={(msg) => (
+                <div style={biilingFormStyles.errorMsg}>{msg}</div>
+              )}
+            />
 
             <div>
               <Field
-                style={feildStyle}
+                style={biilingFormStyles.billingFeildStyle}
                 name="lastName"
                 placeholder="last name"
               />
             </div>
-            <ErrorMessage name="lastName" />
+            <ErrorMessage
+              name="lastName"
+              render={(msg) => (
+                <div style={biilingFormStyles.errorMsg}>{msg}</div>
+              )}
+            />
 
             <div>
               <FieldArray
                 name="contactNumber"
                 render={(arrayHelpers) => (
                   <div>
-
                     {values.values.contactNumber &&
                     values.values.contactNumber.length > 0
                       ? values.values.contactNumber.map((number, index) => (
                           <div key={index}>
                             <div>
                               <Field
+                                style={biilingFormStyles.billingFeildStyle}
                                 name={`contactNumber.${index}`}
                                 placeholder="Contact number"
                               />
@@ -103,7 +112,14 @@ export const BillingForm = () => {
                                 +
                               </button>
                             </div>
-                            <ErrorMessage name={`contactNumber[${index}`} />
+                            <ErrorMessage
+                              name={`contactNumber[${index}`}
+                              render={(msg) => (
+                                <div style={biilingFormStyles.errorMsg}>
+                                  {msg}
+                                </div>
+                              )}
+                            />
                           </div>
                         ))
                       : null}
@@ -114,16 +130,21 @@ export const BillingForm = () => {
 
             <div>
               <Field
-                style={feildStyle}
+                style={biilingFormStyles.billingFeildStyle}
                 name="address.houseNumber"
                 placeholder="H.NO."
               />
             </div>
-            <ErrorMessage name="address.houseNumber" />
+            <ErrorMessage
+              name="address.houseNumber"
+              render={(msg) => (
+                <div style={biilingFormStyles.errorMsg}>{msg}</div>
+              )}
+            />
 
             <div>
               <Field
-                style={feildStyle}
+                style={biilingFormStyles.billingFeildStyle}
                 name="address.street"
                 placeholder="street"
               />
@@ -131,21 +152,31 @@ export const BillingForm = () => {
             <ErrorMessage name="address.street" />
             <div>
               <Field
-                style={feildStyle}
+                style={biilingFormStyles.billingFeildStyle}
                 name="address.city"
                 placeholder="city"
               />
             </div>
-            <ErrorMessage name="address.city" />
+            <ErrorMessage
+              name="address.city"
+              render={(msg) => (
+                <div style={biilingFormStyles.errorMsg}>{msg}</div>
+              )}
+            />
 
             <div>
               <Field
-                style={feildStyle}
+                style={biilingFormStyles.billingFeildStyle}
                 name="address.state"
                 placeholder="State"
               />
             </div>
-            <ErrorMessage name="address.state" />
+            <ErrorMessage
+              name="address.state"
+              render={(msg) => (
+                <div style={biilingFormStyles.errorMsg}>{msg}</div>
+              )}
+            />
 
             <button type="submit">submit</button>
           </Form>

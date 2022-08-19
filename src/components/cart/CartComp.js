@@ -30,7 +30,7 @@ export const CartComp = () => {
               ))}
             </div>
 
-            <div style={{ marginLeft: window.innerWidth / 3 }}>
+            <div style={{ marginLeft: window.innerWidth / 4  }}>
               <BillingForm />
             </div>
           </div>
