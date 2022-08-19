@@ -42,7 +42,7 @@ export const RmvQuantityAction = (id, num) => {
 };
 
 export const addAddressAction = (payload, name) => {
-  console.log("action adderss", payload);
+  // console.log("action adderss", payload);
 
   return {
     type: "addAddress",

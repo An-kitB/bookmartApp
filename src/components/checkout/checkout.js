@@ -6,20 +6,14 @@ export const Checkout = () => {
   const AddressSelector = useSelector((state) => state.Address);
 
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+  console.log("inside checkout useEffect", AddressSelector);
+
   const navigate = useNavigate();
-
-  useEffect(() => {
-    //     !(AddressSelector.Address.length === undefined) &&
-    //         AddressSelector.Address.length > 0 &&
-
-    console.log("inside checkout useEffect");
-
-    //         setIsCheckingOut(true);
-  }, [isCheckingOut]);
+  console.log("jsur  a numnehbr", AddressSelector.length);
 
   console.log(isCheckingOut);
   const handleCheckout = () => {
-    isCheckingOut ? navigate("/Checkout") : alert("need address");
+    AddressSelector.length > 0 ? navigate("/Checkout") : alert("need address");
   };
   return (
     <div>
