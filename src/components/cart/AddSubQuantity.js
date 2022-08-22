@@ -11,29 +11,39 @@ import { AddSubQuantityStyles } from "./cartStyles";
 export const AddSubQuantity = ({ id }) => {
   const dispatch = useDispatch();
   const handleAdd = (id) => {
-    setNum((prv) => (prv += 1));
     dispatch(addQuantityAction(id, numberToBeUsed));
+    setNum((prv) => (prv += 1));
   };
 
   const handleSub = (id) => {
     setNum((prv) => (prv -= 1));
     dispatch(RmvQuantityAction(id, numberToBeUsed));
   };
-  const CartDataSelector = useSelector((state) => state.Qu);
-
+  const CartDataSelector = useSelector((state) => state.Cart);
+  const QuDataSelector = useSelector((state) => state.Qu);
   const [totalSum, setTotalSum] = useState(0);
   const [num, setNum] = useState(0);
-  const [bookQuantity, setBookQuantity] = useState(0);
+
+  function getDifference(array1, array2) {
+    return array1.filter((object1) => {
+      return array2.some((object2) => {
+        return object1.id === object2.id;
+      });
+    });
+  }
 
   const numberToBeUsed = Number(num);
   useEffect(() => {
     const total = [];
-    const dataTotal = CartDataSelector.map((book) => {
+    const data = getDifference(QuDataSelector, CartDataSelector);
+    console.log('sfhvb', data)
+
+    const dataTotal = data.map((book) => {
       const value = book.price * book.Quantity;
       total.push(value);
       const sum = total.reduce((partialSum, a) => partialSum + a, 0);
       setTotalSum(sum);
-      setBookQuantity(book.Quantity);
+
       dispatch(addTotalAction(sum));
     });
   }, [num]);

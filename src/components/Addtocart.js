@@ -4,6 +4,7 @@ import {
   addQuantityAction,
   addToCartAction,
   rmvFromCartAction,
+  RmvQuantityAction,
 } from "../redux/actions/action";
 
 export const Addtocart = ({ id }) => {
@@ -12,7 +13,6 @@ export const Addtocart = ({ id }) => {
   const dispatch = useDispatch();
 
   const [copyNumber, setCopyNumber] = useState(1);
-  const num = Number(copyNumber);
 
   useEffect(() => {}, [copyNumber]);
 
@@ -22,15 +22,22 @@ export const Addtocart = ({ id }) => {
   };
 
   const handleRmv = () => {
+    dispatch(RmvQuantityAction(id));
+    setCopyNumber((prv) => (prv -= 1));
+
     // numberOfCopy > 1 && dispatch(rmvFromCartAction());
   };
 
   return (
     <div>
       <p>How many you wanna purchase </p>
-      <button onClick={handleRmv}>-</button>
+      <button style={{ marginRight: 23 }} onClick={handleRmv}>
+        -
+      </button>
       {quantityCart.length > 0 && quantityCart[id - 1].Quantity}
-      <button onClick={handleAdd}>+</button>
+      <button style={{ marginLeft: 23 }} onClick={handleAdd}>
+        +
+      </button>
     </div>
   );
 };

@@ -39,16 +39,23 @@ export const BookModal = ({ setclick, BookId }) => {
           <img style={styles.imgStyle} src={BookData[BookId - 1].img} />
           <Addtocart id={BookId} />
           <div>
+
             <button
+              style={{ marginRight: 245, height: 35, width: 100, color: "red" }}
               onClick={() => {
                 handleGoToCart(BookData[BookId - 1]);
               }}
             >
               Go to cart
             </button>
-          </div>
 
-          <button onClick={handleClose}>Close</button>
+            <button
+              style={{  height: 35, width: 100, color: "red" }}
+              onClick={handleClose}
+            >
+              Close
+            </button>
+          </div>
         </Box>
       </Modal>
     </div>

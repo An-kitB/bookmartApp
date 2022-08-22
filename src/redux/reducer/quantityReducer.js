@@ -14,7 +14,7 @@ const QuReducer = (state = initialState, action) => {
     }
 
     case "rmvQuantity": {
-      const data = BookData[action.id - 1]
+      state
         .filter((book) => {
           return book.id === action.id;
         })
