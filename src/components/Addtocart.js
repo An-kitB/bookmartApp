@@ -1,37 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCartAction, rmvFromCartAction } from "../redux/actions/action";
+import {
+  addQuantityAction,
+  addToCartAction,
+  rmvFromCartAction,
+} from "../redux/actions/action";
 
-export const Addtocart = () => {
-  const numberOfCopy = useSelector((state) => state.Quantity);
-  const [copyNumber, setCopyNumber] = useState(numberOfCopy);
-  const num = Number(copyNumber);
+export const Addtocart = ({ id }) => {
+  const quantityCart = useSelector((state) => state.Qu);
+  // console.log("whbfre", quantityCart[id - 1].Quantity);
   const dispatch = useDispatch();
 
+  const [copyNumber, setCopyNumber] = useState(1);
+  const num = Number(copyNumber);
 
-  useEffect(() => {
-    setCopyNumber(numberOfCopy);
-  }, [numberOfCopy]);
-
-
+  useEffect(() => {}, [copyNumber]);
 
   const handleAdd = () => {
-    dispatch(addToCartAction());
+    dispatch(addQuantityAction(id));
+    setCopyNumber((prv) => (prv += 1));
   };
 
   const handleRmv = () => {
-    numberOfCopy > 1 && dispatch(rmvFromCartAction());
+    // numberOfCopy > 1 && dispatch(rmvFromCartAction());
   };
 
   return (
     <div>
       <p>How many you wanna purchase </p>
       <button onClick={handleRmv}>-</button>
-      {num}
+      {quantityCart.length > 0 && quantityCart[id - 1].Quantity}
       <button onClick={handleAdd}>+</button>
-    
     </div>
-
-
   );
 };

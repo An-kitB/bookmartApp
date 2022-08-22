@@ -6,7 +6,7 @@ import homeBurial from "../media/booksMedia/homeBurial.jpeg";
 import Relativity from "../media/booksMedia/Relativity.jpeg";
 
 import AlbertEinstien from "../media/authorMedia/AlbertEinstien.jpg";
-import jkRowling from '../media/authorMedia/jkRowling.jpeg'
+import jkRowling from "../media/authorMedia/jkRowling.jpeg";
 import RobertFrost from "../media/authorMedia/RobertFrost.jpeg";
 
 export const BookData = [
@@ -19,7 +19,8 @@ export const BookData = [
     rating: "4.5",
     img: Birches,
     authorImg: AlbertEinstien,
-    // authorImg:
+    // authorImg:,
+    Quantity: 0,
   },
   {
     id: "2",
@@ -30,6 +31,7 @@ export const BookData = [
     rating: "3.5",
     img: firrNice,
     authorImg: jkRowling,
+    Quantity: 0,
   },
 
   {
@@ -41,6 +43,7 @@ export const BookData = [
     rating: "4.2",
     img: harryPotter,
     authorImg: RobertFrost,
+    Quantity: 0,
   },
 
   {
@@ -52,6 +55,7 @@ export const BookData = [
     rating: "4.2",
     img: Birches,
     authorImg: AlbertEinstien,
+    Quantity: 0,
   },
   {
     id: "5",
@@ -62,6 +66,7 @@ export const BookData = [
     rating: "4.2",
     img: HarryPotter2,
     authorImg: jkRowling,
+    Quantity: 0,
   },
   {
     id: "6",
@@ -72,6 +77,7 @@ export const BookData = [
     rating: "4.2",
     img: firrNice,
     authorImg: RobertFrost,
+    Quantity: 0,
   },
 
   {
@@ -83,6 +89,7 @@ export const BookData = [
     rating: "4.5",
     img: homeBurial,
     authorImg: jkRowling,
+    Quantity: 0,
   },
   {
     id: "8",
@@ -93,6 +100,7 @@ export const BookData = [
     rating: "3.5",
     img: Relativity,
     authorImg: AlbertEinstien,
+    Quantity: 0,
   },
 
   {
@@ -104,6 +112,7 @@ export const BookData = [
     rating: "4.2",
     img: homeBurial,
     authorImg: jkRowling,
+    Quantity: 0,
   },
 
   {
@@ -115,6 +124,7 @@ export const BookData = [
     rating: "4.2",
     img: Birches,
     authorImg: RobertFrost,
+    Quantity: 0,
   },
   {
     id: "11",
@@ -125,7 +135,9 @@ export const BookData = [
     rating: "4.2",
     img: firrNice,
     authorImg: AlbertEinstien,
+    Quantity: 0,
   },
+
   {
     id: "12",
     name: "Naruto",
@@ -135,6 +147,7 @@ export const BookData = [
     rating: "4.2",
     img: Relativity,
     authorImg: jkRowling,
+    Quantity: 0,
   },
 
   {
@@ -146,6 +159,7 @@ export const BookData = [
     rating: "4.5",
     img: firrNice,
     authorImg: RobertFrost,
+    Quantity: 0,
   },
   {
     id: "14",
@@ -156,6 +170,7 @@ export const BookData = [
     rating: "3.5",
     img: homeBurial,
     authorImg: AlbertEinstien,
+    Quantity: 0,
   },
   {
     id: "15",
@@ -166,6 +181,7 @@ export const BookData = [
     rating: "3.5",
     img: HarryPotter2,
     authorImg: jkRowling,
+    Quantity: 0,
   },
 
   {
@@ -177,6 +193,7 @@ export const BookData = [
     rating: "3.5",
     img: harryPotter,
     authorImg: RobertFrost,
+    Quantity: 0,
   },
   {
     id: "17",
@@ -187,6 +204,7 @@ export const BookData = [
     rating: "3.5",
     img: HarryPotter2,
     authorImg: AlbertEinstien,
+    Quantity: 0,
   },
   {
     id: "18",
@@ -197,6 +215,7 @@ export const BookData = [
     rating: "3.5",
     img: homeBurial,
     authorImg: jkRowling,
+    Quantity: 0,
   },
   {
     id: "19",
@@ -207,6 +226,7 @@ export const BookData = [
     rating: "3.5",
     img: firrNice,
     authorImg: RobertFrost,
+    Quantity: 0,
   },
   {
     id: "20",
@@ -217,5 +237,6 @@ export const BookData = [
     rating: "3.5",
     img: homeBurial,
     authorImg: AlbertEinstien,
+    Quantity: 0,
   },
 ];

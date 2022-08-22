@@ -19,7 +19,7 @@ export const AddSubQuantity = ({ id }) => {
     setNum((prv) => (prv -= 1));
     dispatch(RmvQuantityAction(id, numberToBeUsed));
   };
-  const CartDataSelector = useSelector((state) => state.Cart);
+  const CartDataSelector = useSelector((state) => state.Qu);
 
   const [totalSum, setTotalSum] = useState(0);
   const [num, setNum] = useState(0);

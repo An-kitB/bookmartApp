@@ -3,6 +3,7 @@ import AddressReducer from "./AddressReducer";
 import AddtocartReducer from "./addTocarReducer";
 import AuthRedcuer from "./AuthRedcuer";
 import CartReducer from "./CartReducer";
+import QuReducer from "./quantityReducer";
 import TotalReducer from "./totalSumReducer";
 
 const Rootreducer = combineReducers({
@@ -10,7 +11,8 @@ const Rootreducer = combineReducers({
   Quantity: AddtocartReducer,
   Address: AddressReducer,
   TotalSum: TotalReducer,
-  Auth : AuthRedcuer,
+  Auth: AuthRedcuer,
+  Qu: QuReducer,
 });
 
 export default Rootreducer;

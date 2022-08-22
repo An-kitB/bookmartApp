@@ -23,6 +23,7 @@ export const BookModal = ({ setclick, BookId }) => {
     navigate("/cart");
   };
   const handleClose = () => {
+    dispatch(resetQuantityction());
     setclick(false);
   };
   return (
@@ -36,7 +37,7 @@ export const BookModal = ({ setclick, BookId }) => {
             {BookData[BookId - 1].authorName}
           </Typography>
           <img style={styles.imgStyle} src={BookData[BookId - 1].img} />
-          <Addtocart />
+          <Addtocart id={BookId} />
           <div>
             <button
               onClick={() => {

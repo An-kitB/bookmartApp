@@ -1,9 +1,8 @@
-const initialState = [];
+import { BookData } from "../../components/bookdata";
 
-const CartReducer = (state = initialState, action) => {
+const initialState = BookData;
+const QuReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "add":
-      return [...state, action.payload];
     case "addQuantity": {
       state
         .filter((book) => {
@@ -15,7 +14,7 @@ const CartReducer = (state = initialState, action) => {
     }
 
     case "rmvQuantity": {
-      const data = state
+      const data = BookData[action.id - 1]
         .filter((book) => {
           return book.id === action.id;
         })
@@ -29,4 +28,4 @@ const CartReducer = (state = initialState, action) => {
   }
 };
 
-export default CartReducer;
+export default QuReducer;

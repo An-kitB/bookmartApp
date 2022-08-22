@@ -25,11 +25,12 @@ export const addBookToCartAction = (payload) => {
   };
 };
 
-export const addQuantityAction = (id, num) => {
+export const addQuantityAction = (id, number) => {
+  console.log('actionbvhjbv', id)
   return {
     type: "addQuantity",
     id,
-    num,
+    number,
   };
 };
 

@@ -1,15 +1,10 @@
 import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { AddSubQuantity } from "./AddSubQuantity";
 import { cartStyles } from "./cartStyles";
 
-export const CardDataRender = ({
-  id,
-  img,
-  name,
-  authorName,
-  Quantity,
-  price,
-}) => {
+export const CardDataRender = ({ id, img, name, authorName, price }) => {
+  const stateSel = useSelector((state) => state.Qu);
   return (
     <div style={cartStyles.main}>
       <div style={cartStyles.imgConatainer}>
@@ -22,7 +17,7 @@ export const CardDataRender = ({
         </div>
         <div>
           <p style={cartStyles.txtStyle.Priceheading}>Price : {price}</p>
-          <p> Quantity:{Quantity}</p>
+          <p> Quantity:{stateSel[id-1].Quantity}</p>
           <div style={cartStyles.btnStyleDiv}>
             <AddSubQuantity id={id} />
           </div>
