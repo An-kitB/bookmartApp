@@ -34,7 +34,7 @@ export const Addtocart = ({ id }) => {
       <button style={{ marginRight: 23 }} onClick={handleRmv}>
         -
       </button>
-      {quantityCart.length > 0 && quantityCart[id - 1].Quantity}
+      {copyNumber}
       <button style={{ marginLeft: 23 }} onClick={handleAdd}>
         +
       </button>

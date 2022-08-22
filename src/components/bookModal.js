@@ -18,7 +18,6 @@ export const BookModal = ({ setclick, BookId }) => {
   const handleGoToCart = (data) => {
     const payload = { ...data, Quantity: QuantitySelector };
     dispatch(addBookToCartAction(payload));
-    dispatch(resetQuantityction());
 
     navigate("/cart");
   };

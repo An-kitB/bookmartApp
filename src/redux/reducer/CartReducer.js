@@ -3,7 +3,17 @@ const initialState = [];
 const CartReducer = (state = initialState, action) => {
   switch (action.type) {
     case "add":
-      return [...state, action.payload];
+      console.log("sjbvrn", action.payload);
+      if (state.find((data) => data.id === action.payload.id)) {
+        state
+          .filter((data) => {
+            return data.id === action.id;
+          })
+          .map((book) => (book.Quantity += 1));
+        return state;
+      } else {
+        return [...state, action.payload];
+      }
     case "addQuantity": {
       state
         .filter((book) => {
@@ -15,12 +25,6 @@ const CartReducer = (state = initialState, action) => {
     }
 
     case "rmvQuantity": {
-      const data = state
-        .filter((book) => {
-          return book.id === action.id;
-        })
-        .map((book) => (book.Quantity -= 1));
-      console.log("reducer", state);
       return state;
     }
 

@@ -13,7 +13,7 @@ export const rmvFromCartAction = () => {
 
 export const resetQuantityction = () => {
   return {
-    type: "Reset",
+    type: "resetQuantity",
   };
 };
 

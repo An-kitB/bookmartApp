@@ -1,10 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { AddSubQuantity } from "./AddSubQuantity";
 import { cartStyles } from "./cartStyles";
 
 export const CardDataRender = ({ id, img, name, authorName, price }) => {
+
   const stateSel = useSelector((state) => state.Qu);
+const [num, setNum ]= useState(1)
+
+useEffect(()=>{
+  stateSel[id - 1].Quantity !== 1 && setNum(stateSel[id - 1].Quantity)
+}, [stateSel[id - 1].Quantity])
   return (
     <div style={cartStyles.main}>
       <div style={cartStyles.imgConatainer}>
@@ -17,7 +23,7 @@ export const CardDataRender = ({ id, img, name, authorName, price }) => {
         </div>
         <div>
           <p style={cartStyles.txtStyle.Priceheading}>Price : {price}</p>
-          <p> Quantity:{stateSel[id-1].Quantity}</p>
+          <p> Quantity:{num}</p>
           <div style={cartStyles.btnStyleDiv}>
             <AddSubQuantity id={id} />
           </div>
@@ -26,3 +32,5 @@ export const CardDataRender = ({ id, img, name, authorName, price }) => {
     </div>
   );
 };
+
+

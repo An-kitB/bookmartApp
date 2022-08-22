@@ -23,6 +23,10 @@ const QuReducer = (state = initialState, action) => {
       return state;
     }
 
+    case "resetQuantity":
+      state.filter((book) => (book.Quantity = 1));
+      return state;
+
     default:
       return state;
   }

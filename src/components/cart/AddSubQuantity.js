@@ -36,7 +36,6 @@ export const AddSubQuantity = ({ id }) => {
   useEffect(() => {
     const total = [];
     const data = getDifference(QuDataSelector, CartDataSelector);
-    console.log('sfhvb', data)
 
     const dataTotal = data.map((book) => {
       const value = book.price * book.Quantity;

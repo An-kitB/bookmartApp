@@ -10,9 +10,8 @@ export const CartComp = () => {
 
   const totalSumSelector = useSelector((state) => state.TotalSum);
 
-  useEffect(() => {
-    console.log("bfcuwegu", totalSumSelector);
-  }, [totalSumSelector]);
+  console.log("bfcuwegu", CartDataSelector);
+  useEffect(() => {}, [totalSumSelector]);
 
   return (
     <div style={{ marginLeft: 90 }}>
@@ -38,7 +37,7 @@ export const CartComp = () => {
               ))}
             </div>
 
-            <div style={{ marginLeft: window.innerWidth / 6}}>
+            <div style={{ marginLeft: window.innerWidth / 6 }}>
               <BillingForm />
             </div>
           </div>
